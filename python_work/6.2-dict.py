@@ -22,15 +22,16 @@
 # print alien_0
 # del alien_0['points']
 
-favorite_languages = {
-	'jen': 'python',
-	'sarah': 'c',
-	'edward': 'ruby',
-	'xudeng': 'python'
-}
+# favorite_languages = {
+# 	'jen': 'python',
+# 	'sarah': 'c',
+# 	'edward': 'ruby',
+# 	'xudeng': 'python'
+# }
 
 # 默认遍历所有的键
 # favorite_languages == favorite_languages.keys()
+
 # for key in favorite_languages.keys():
 # 	print "%s like language %s" % \
 # 		(key.title(), favorite_languages[key].title())
@@ -44,12 +45,23 @@ favorite_languages = {
 # for value in set(favorite_languages.values()):
 # 	print value
 
-names = ['xudeng', 'zsh']
+# names = ['xudeng', 'zsh']
 
-for name in names:
-	if name not in favorite_languages.keys():
-		print name
-		print 'welcome into our as?'
-	else:
-		print name
-		print 'thank you !'
+# for name in names:
+# 	if name not in favorite_languages.keys():
+# 		print name
+# 		print 'welcome into our as?'
+# 	else:
+# 		print name
+# 		print 'thank you !'
+
+favorite_languages = {
+	'jen': ['python', 'c'],
+	'sarah': ['c'],
+	'edward': ['ruby', 'python'],
+	'xudeng': ['python', 'haskell', 'swift', 'oc']}
+
+for name, languages  in favorite_languages.items():
+	print "\n%s like language:" % name.title()
+	for language in languages:
+		print '\t%s' % language.title()
