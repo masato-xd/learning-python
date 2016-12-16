@@ -20,4 +20,3 @@ alien_0['x_position'] += x_increment
 #print 'new x: %s' % alien_0['x_position']
 print alien_0
 del alien_0['points']
-print alien_0
