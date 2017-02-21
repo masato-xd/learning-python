@@ -36,8 +36,8 @@ active = True
 #    #print(message)   
 #    if message != 'quit':
 #        print message
-#while active:
-    
+
+#while active:   
 #    message = raw_input(prompt)
 #    if message == 'quit':
 #        break           # break退出循环

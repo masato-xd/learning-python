@@ -1,7 +1,7 @@
 prompt = '\nPlease tell me your Age:'
 
 while True:
-	age = int(raw_input("Enter your age:"))
+	age = int(raw_input(prompt))
 	
 	if age < 3:
 		print("hi, my kid's, you free" )
