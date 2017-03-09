@@ -54,6 +54,10 @@ class Battery(object):
         message += ' miles'
         print message
 
+    def up_battery(self):
+        if self.battery_size < 85:
+            self.battery_size = 85
+
 if __name__ == '__main__':
     my_new_car = Car('bmw', 'x1', 2017)
 

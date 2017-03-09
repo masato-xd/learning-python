@@ -3,10 +3,8 @@
 
 class User(object):
 
-
     def __init__(self, first_name, last_name, **args):
         """初始化用户的基本属性"""
-
         self.first_name = first_name
         self.last_name = last_name
         self.args = args

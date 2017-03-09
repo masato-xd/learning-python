@@ -22,17 +22,6 @@ class User(object):
         print("Hello! " + full_name.title() + '\n')
 
 
-class Admin(User):
-
-    """docstring for Admin"""
-
-    def __init__(self, first_name, last_name, **args):
-        super(Admin, self).__init__(first_name, last_name, **args)
-        self.first_name = first_name
-        self.last_name = last_name
-        self.args = args
-
-
 class Privileges(object):
 
     """docstring for Privileges"""
@@ -45,11 +34,3 @@ class Privileges(object):
     def show_privileges(self):
         for l in self.privileges:
             print(l)
-
-if __name__ == '__main__':
-
-    xd = User('x', 'd')
-
-    xd.describe_user()
-    xd.greet_user()
-    xd.privileges.show_privileges()

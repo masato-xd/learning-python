@@ -1,6 +1,7 @@
 # coding: utf-8
 # iceCreamShop.py
 
+
 class Restaurant(object):
 
     """描述一个餐馆"""
@@ -15,7 +16,7 @@ class Restaurant(object):
         print("\n餐厅名称是: " + self.restaurant_name.title())
         print("菜品是: " + self.cuisine_type)
 
-    def set_number_served(self, new_number)	:
+    def set_number_served(self, new_number):
         self.number_served = new_number
 
     def increment_number_served(self, new_number):
@@ -27,8 +28,11 @@ class Restaurant(object):
     def open_restaurant(self):
         print("餐厅正在营业中")
 
+
 class IceCreamStand(Restaurant):
+
     """docstring for IceCreamStand"""
+
     def __init__(self, restaurant_name, cuisine_type):
         super(IceCreamStand, self).__init__(restaurant_name, cuisine_type)
         self.flavors = ['apple', 'orange', 'caomei', 'banana', 'chocolate']
@@ -37,6 +41,7 @@ class IceCreamStand(Restaurant):
         print("冰激凌有以下口味: ")
         for flavor in self.flavors:
             print("- " + flavor)
+
 
 if __name__ == '__main__':
     my_ice_cream = IceCreamStand('冰天下', '冰激凌')
