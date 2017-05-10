@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: utf-8
+# coding: utf-8
 
 shoplist = ['a', 'b', 'c', 'd']
 
@@ -12,6 +12,7 @@ print "shoplist is %s" % shoplist
 
 print "mylist is %s" % mylist
 
+print('--' * 20)
 # 通过切片做一个完整的副本
 mylist = shoplist[:]
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: utf-8
+# coding: utf-8
 
 
 import time
@@ -22,4 +22,3 @@ except KeyboardInterrupt:
 finally:
     f.close()
     print 'close the file'
-

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#coding: utf-8
+# coding: utf-8
 
 
 zoo = ('wolf', 'daxiang', 'houzi')
@@ -14,7 +14,7 @@ print 'all animals new_zoo', new_zoo
 
 print 'old zoo are', new_zoo[2]
 
-print 'new zoo zuihou yige dongwu', new_zoo[2][2]
+print 'new zoo zuihou yige dongwu', new_zoo[2][-1]
 
 
 age = 22
