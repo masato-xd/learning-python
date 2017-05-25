@@ -30,7 +30,7 @@ def get_yesterday(fmt, day_num=1):
 def ftp_upload(dirs):
     """将日志文件上传到ftp服务器"""
     print("开始上传日志")
-    (status, output) = commands.getstatusoutput('/usr/local/bin/ncftpput -m -R -r 3 -t 5 -u bob -p dWh4Myd4 %s /%s %s' % (ftp_ip, hostname, dirs))
+    (status, output) = commands.getstatusoutput('/usr/local/bin/ncftpput -m -r 3 -t 5 -u ftpacc -p ztgame@123 %s /%s %s' % (ftp_ip, hostname, dirs))
     if status != 0:
         print output
     else:
@@ -62,13 +62,8 @@ if __name__ == '__main__':
     else:
         ftp_ip = sys.argv[1]
         fmt = '%y%m%d'
-        back_dir = "/log/%s" % get_yesterday(fmt)
-        if not os.path.exists(back_dir):
-            os.system('mkdir -p %s' % back_dir)
-            os.system('mv /log/*20%s* %s' % (get_yesterday(fmt), back_dir))
-            print(get_now_time() + " mv ok")
-        else:
-            print(get_now_time() + " Directory exists")
+        back_dir = "/home/qqdz/backup/%s-00/*" % get_yesterday(fmt, 0)
+        print back_dir
 
         if check_port(ftp_ip):
             ftp_upload(back_dir)

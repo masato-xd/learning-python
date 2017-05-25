@@ -18,13 +18,14 @@ with open(filename) as file:
     # for index, column_header in enumerate(header_row):
     #     print(index, column_header)
 
-    # 取出最高温度和日期
+    # # 取出最高温度和日期
     # for high_temperature in reader:
     #     high = int(high_temperature[1])
     #     highs.append(high_temperature[1])
     dates, highs, lows = [], [], []
     for row in reader:
         current_date = dt.strptime(row[0], '%Y-%m-%d')
+
         # print type(dates)
         dates.append(current_date)
 
@@ -41,9 +42,17 @@ plt.plot(dates, lows, c='blue', alpha=0.2)
 plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.5)
 
 # 设置图形格式
-plt.title("Daily high temperatures, July 2014", fontsize=14)
-plt.xlabel('', fontsize=10)
+plt.xlim(dates[0], dates[-1])  # set axis limits
+# plt.ylim(highs[0], highs[-1])
+plt.title("Daily high temperatures, July 2014", fontsize=10)
+plt.xlabel('', fontsize=5)
 fig.autofmt_xdate()
 plt.ylabel("Temperatures (F)", fontsize=10)
 plt.tick_params(axis='both', which='major', labelsize=9)
+
+# 设置网格
+ax = plt.gca()
+ax.xaxis.grid(True)  # 垂直网格ax.yaxis.grid(True)
+# ax.yaxis.grid(True)  # 水平网格
+
 plt.show()
