@@ -28,13 +28,12 @@ def get_yesterday(fmt, day_num=1):
 
 
 def ftp_upload(dirs):
-    """将日志文件上传到ftp服务器"""
-    print("开始上传日志")
+    """上传到王旭峰hadoo7"""
     (status, output) = commands.getstatusoutput('/usr/local/bin/ncftpput -m -r 3 -t 5 -u ftpacc -p ztgame@123 %s /%s %s' % (ftp_ip, hostname, dirs))
-    if status != 0:
-        print output
+    if status == 0:
+        print(output)
     else:
-        print output
+        print(output)
 
 
 def del_dir(dir):
@@ -52,7 +51,7 @@ def check_port(ftp_ip):
         return 1
     except Exception as e:
         sk.close()
-        print(get_now_time() + ' Server port 21 not connect!')
+        print(get_now_time() + ' Server port 21 not connect! ' + ftp_ip)
         return 0
 
 
@@ -63,9 +62,10 @@ if __name__ == '__main__':
         ftp_ip = sys.argv[1]
         fmt = '%y%m%d'
         back_dir = "/home/qqdz/backup/%s-00/*" % get_yesterday(fmt, 0)
-        print back_dir
+        print("dir: " + back_dir)
 
         if check_port(ftp_ip):
+            print("start: " + get_now_time() + '\n')
             ftp_upload(back_dir)
-        else:
-            pass
+            print("\nend: " + get_now_time())
+            print("----------" * 8)
